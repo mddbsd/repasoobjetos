@@ -27,6 +27,7 @@ public class Empresa {
                         System.out.print("Email: ");
                         email = s.nextLine();
                         lista.add(new Clientes(nombre, email, dni, telefono));
+                        System.out.print("Desea ingresar mas clientes (s/n): ");
                         op = funciones.Validaciones.SiNo(s.nextLine());
                     }while(op.equals("s"));
                     break;
@@ -43,7 +44,8 @@ public class Empresa {
                     break;
                 case "debug":
                     for (int i = 0; i < 10; i++){
-                        System.out.println("Codigo generado: " + funciones.Generadores.CodCliente());
+                    //    System.out.println("Codigo generado: " + funciones.Generadores.CodCliente());
+                        System.out.println(((Math.random()*11)));
                     }
                     break;
             }    
