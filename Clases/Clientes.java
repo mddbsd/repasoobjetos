@@ -1,7 +1,7 @@
 package Clases;
 import funciones.Generadores;
 public class Clientes extends Personas{
-    private String codigoCliente;
+    String codigoCliente;
     private int credito;
 
     public Clientes(String n, String e, int d, int t){

@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import Clases.Clientes;
+import Clases.Productos;
+import Clases.Personas;
+import Clases.Sql;
 import funciones.*;
+
 public class Empresa {
     public static void main(String[] args){
         ArrayList<Clientes> lista = new ArrayList<Clientes>();
@@ -40,11 +44,26 @@ public class Empresa {
                     }
                     break;
                 case "3":
+                    //Lista de personas
+                    ArrayList<Personas> listaPers = Sql.consulta("select apyn, dni, correo, telefono from personas");
+                    for(Productos aux : listaPers){
+                        System.out.println(aux.getNombre());
+                    }
+                    break;
+                case "4":
+                    //Lista de productos
+                    ArrayList<Productos> listaProds = Sql.consulta("select * from productos");
+                    for(Productos aux : listaProds){
+                        System.out.println(aux.getNombre());
+                    }
+                    break;
+
+                case "5":
                     flag = false;
                     break;
                 case "debug":
                     for (int i = 0; i < 10; i++){
-                    //    System.out.println("Codigo generado: " + funciones.Generadores.CodCliente());
+                    //  System.out.println("Codigo generado: " + funciones.Generadores.CodCliente());
                         System.out.println(((Math.random()*11)));
                     }
                     break;
