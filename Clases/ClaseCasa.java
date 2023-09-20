@@ -1,7 +1,7 @@
 package Clases;
 public class ClaseCasa {
     //ATRIBUTOS
-    private String techo;
+    private Techos techo;
     private String piso;
     private String color;
     private String direccion;
@@ -10,7 +10,7 @@ public class ClaseCasa {
     private double temperatura;
     
     //CONSTRUCTOR
-    public ClaseCasa(String t, String p, String c, String d, int a, double s){
+    public ClaseCasa(Techos t, String p, String c, String d, int a, double s){
         this.techo = t;
         this.piso = p;
         this.color = c;
@@ -20,7 +20,7 @@ public class ClaseCasa {
         this.temperatura = 0;
     }
     //Getters
-    public String getTecho(){
+    public Techos getTecho(){
         return this.techo;
     }
     public String getPiso(){
@@ -55,10 +55,25 @@ public class ClaseCasa {
         System.out.println("Aviso: Puertas Desbloqueadas");
     }
     public void EnciendeCalefaccion(){
-        int temp;
+        /* 
         System.out.println("Que temperatura?");
-        temp = Integer.parseInt(System.console().readLine());
-        System.out.println("La temperatura es " + temp + "grados centigrados");
+        this.temperatura = Double.parseDouble(System.console().readLine());
+        System.out.println("La temperatura es " + this.temperatura + "grados centigrados");
+        */
+        if (getTemperatura() != 0){
+            System.out.println("La temperatura ya esta encendida");
+        }else {
+            System.out.println("Que temperatura?");
+            setTemperatura(Double.parseDouble(System.console().readLine()));
+            System.out.println("La temperatura es " + getTemperatura() + " grados centigrados");
+        }
     }
 
+    public String toString(){
+        return "El techo es de " + this.techo + "\n" +
+               "Con piso de " + this.piso + "\n" +
+               "El color exterior es " + this.color + "\n" +
+               "Esta ubicada en " + this.direccion + "\n" +
+               "Tiene " + this.ambientes + "ambientes y una superficie total de " + this.superficie;
+    }
 }
