@@ -4,7 +4,7 @@ public class Generadores {
     public static String CodCliente(){
         int rand;
         String cod;
-        rand = (int)((Math.random()*101) + 100);
+        rand = (int)((Math.random()*1) + 1000);
         cod = "EMP" + rand;
         return cod;
     }        
@@ -27,5 +27,16 @@ public class Generadores {
             System.out.println();*/
             System.out.println((char)((int)(Math.random() * (90 - 65)) + 65));
         }
+    }
+
+    public static String generaPatente(){
+        String patenteGenerada = "";
+        for(int i = 0; i < 3; i ++){
+            patenteGenerada += (char)((int)(Math.random() * (90 - 65)) + 65);
+        }   
+        for(int i = 0; i < 3; i++){
+            patenteGenerada += (int)(Math.random() * 10);
+        }     
+        return patenteGenerada;
     }
 }
